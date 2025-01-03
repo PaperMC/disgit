@@ -5,7 +5,7 @@ import {shortCommit, truncate} from './util';
 const debug = false;
 
 // Handles event sent by cloudflare
-async function handleRequest(request: Request, env: BoundEnv): Promise<Response> {
+export async function handleRequest(request: Request, env: BoundEnv): Promise<Response> {
     const event = request.headers.get("X-GitHub-Event");
     const contentType = request.headers.get("content-type");
     if (event != null && contentType != null) {
